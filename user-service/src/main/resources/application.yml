@@ -1,0 +1,28 @@
+server:
+  port: 8201
+spring:
+  application:
+    name: user-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      maximum-pool-size: 50
+      pool-name: ${spring.application.name}
+    url: jdbc:mysql://192.168.0.204:3306/user?useUnicode=true&characterEncoding=utf8&useSSL=false&tinyInt1isBit=false&allowPublicKeyRetrieval=true
+    password: root123
+    username: root
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+  mapper-locations: classpath:/mapper/*.xml
+  global-config:
+    db-config:
+      table-underline: true
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8001/eureka/

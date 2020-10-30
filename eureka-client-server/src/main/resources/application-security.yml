@@ -1,0 +1,13 @@
+# security认证注册
+server:
+  port: 8103
+spring:
+  application:
+    name: eureka-client
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://yanch:123456@192.168.0.70:8004/eureka/
+
